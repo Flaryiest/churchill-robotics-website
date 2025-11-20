@@ -35,13 +35,13 @@ function App() {
     }
   ]
 
-  const services = [
-    "Robot Design",
-    "Programming",
-    "CAD Modeling",
-    "Competition Strategy",
-    "Team Collaboration",
-    "STEM Outreach"
+  const teams = [
+    { name: "3388A", url: "/3388A" },
+    { name: "3388C", url: "/3388C" },
+    { name: "3388H", url: "/3388H" },
+    { name: "3388S", url: "/3388S" },
+    { name: "3388X", url: "/3388X" },
+    { name: "3388Z", url: "/3388Z" }
   ]
 
   return (
@@ -69,7 +69,7 @@ function App() {
         </motion.p>
       </motion.section>
 
-      {/* About Section */}
+      {/* Teams Section */}
       <motion.section 
         className="about"
         initial="initial"
@@ -81,21 +81,22 @@ function App() {
           className="about-title"
           variants={fadeInUp}
         >
-          What We Do
+          Teams
         </motion.h2>
         <motion.div 
           className="services-grid"
           variants={stagger}
         >
-          {services.map((service, index) => (
-            <motion.div
+          {teams.map((team, index) => (
+            <motion.a
               key={index}
+              href={team.url}
               className="service-item"
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
             >
-              <h3>{service}</h3>
-            </motion.div>
+              <h3>{team.name}</h3>
+            </motion.a>
           ))}
         </motion.div>
       </motion.section>
@@ -112,7 +113,7 @@ function App() {
           className="portfolio-title"
           variants={fadeInUp}
         >
-          Selected Cases
+          Posts
         </motion.h2>
         <div className="cases-grid">
           {portfolioCases.map((caseItem, index) => (
