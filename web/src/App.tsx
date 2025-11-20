@@ -36,12 +36,12 @@ function App() {
   ]
 
   const teams = [
-    { name: "3388A", url: "/3388A" },
-    { name: "3388C", url: "/3388C" },
-    { name: "3388H", url: "/3388H" },
-    { name: "3388S", url: "/3388S" },
-    { name: "3388X", url: "/3388X" },
-    { name: "3388Z", url: "/3388Z" }
+    { name: "3388A", title: "Archangel", url: "/3388A" },
+    { name: "3388C", title: "Cortisol", url: "/3388C" },
+    { name: "3388H", title: "Hyperion", url: "/3388H" },
+    { name: "3388S", title: "Spirit", url: "/3388S" },
+    { name: "3388X", title: "", url: "/3388X" },
+    { name: "3388Z", title: "", url: "/3388Z" }
   ]
 
   return (
@@ -95,7 +95,10 @@ function App() {
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
             >
-              <h3>{team.name}</h3>
+              <div className="team-card-content">
+                {team.title && <div className="team-title">{team.title}</div>}
+                <h3>{team.name}</h3>
+              </div>
             </motion.a>
           ))}
         </motion.div>
