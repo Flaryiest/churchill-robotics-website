@@ -27,7 +27,7 @@
         /* Override asset CSS for consistent card image sizing */
         .tiles article .image img {
             width: 100% !important;
-            height: 280px !important;
+            height: 300px !important;
             object-fit: cover !important;
             object-position: center !important;
         }
@@ -208,16 +208,115 @@
         </div>
     </section>
 
+    <div class="inner">
+        <header>
+            <center>
+                <h2 style="padding: 0; margin: 40px 0 20px 0; font-size: 24px; color: #333;"><u>Recent Posts</u></h2>
+            </center>
+        </header>
+    </div>
+
+    <section class="recent-posts">
+        <div class="posts-container">
+            <article class="post-item">
+                <div class="post-thumbnail">
+                    <img src="/static/54343906547_1a3ec628bb_c.jpg" alt="Recent post" />
+                    <div class="post-overlay">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-author">Team Cortisol • 3388C</div>
+                    <div class="post-date">2 days ago</div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 245</span>
+                        <span><i class="fas fa-comment"></i> 18</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-thumbnail">
+                    <img src="/static/image_2025-04-15_195832843.png" alt="Recent post" />
+                </div>
+                <div class="post-info">
+                    <div class="post-author">Team Ares • 3388A</div>
+                    <div class="post-date">4 days ago</div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 189</span>
+                        <span><i class="fas fa-comment"></i> 12</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-thumbnail">
+                    <img src="/static/54345020873_80d253f148_c.jpg" alt="Recent post" />
+                    <div class="post-overlay">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-author">Team Khepri • 3388K</div>
+                    <div class="post-date">1 week ago</div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 312</span>
+                        <span><i class="fas fa-comment"></i> 24</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-thumbnail">
+                    <img src="/static/image_2025-04-15_195423836.png" alt="Recent post" />
+                </div>
+                <div class="post-info">
+                    <div class="post-author">Team Hyperion • 3388H</div>
+                    <div class="post-date">1 week ago</div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 156</span>
+                        <span><i class="fas fa-comment"></i> 9</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-item">
+                <div class="post-thumbnail">
+                    <img src="/static/54343877122_e3a021cca2_c.jpg" alt="Recent post" />
+                    <div class="post-overlay">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-author">Team Nova • 3388Z</div>
+                    <div class="post-date">2 weeks ago</div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 203</span>
+                        <span><i class="fas fa-comment"></i> 15</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="inner">
+        <header>
+            <center>
+                <h2 style="padding: 0; margin: 40px 0 20px 0; font-size: 24px; color: #333;"><u>Meet our teams</u></h2>
+            </center>
+        </header>
+    </div>
+
     <section class="tiles">
         <article class="style5">
             <span class="image">
                 <img src="/static/image_2025-04-15_195832843.png" alt="" />
             </span>
             <a href="team_3388A.html">
-                <h1>Ares</h1>1>
+                <h1>Ares</h1>
                 <h2>3388S</h2>
                 <div class="content">
-                    <p>We named our robotics team 'Spirit' because it represents our enthusiasm, determination, and the strong bond we share as a team.</p>
+                    <p>We are churchill's freakiest team</p>
                 </div>
             </a>
         </article>
@@ -305,10 +404,137 @@
                 </div>
             </a>
         </article>
-        <article class="style3">
-            <span class="image">
-                <img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="" />
+    </section>
 
+    <style>
+        .recent-posts {
+            padding: 20px 60px 60px 60px;
+            background-color: #f8f9fa;
+        }
+
+        .posts-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .post-item {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .post-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .post-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .post-item:hover .post-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .post-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .post-info {
+            padding: 15px;
+        }
+
+        .post-author {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .post-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .post-stats i {
+            color: #e1306c;
+        }
+
+        /* Scrollbar styling */
+        .posts-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .posts-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .posts-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .posts-container::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+
+        @media (max-width: 768px) {
+            .recent-posts {
+                padding: 20px 20px 40px 20px;
+            }
+            
+            .post-item {
+                flex: 0 0 220px;
+            }
+            
+            .post-thumbnail {
+                height: 220px;
+            }
+        }
+    </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
